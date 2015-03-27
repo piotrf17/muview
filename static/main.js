@@ -18,9 +18,12 @@ function main() {
 			return 50*i;
 		    })
 		.attr("r", function(d) {
-			console.log(d);
 			return 10;
 		    })
-		.attr("fill", "red");
+		.attr("fill", "red")
+		.on('click', function() {
+			var song = d3.select(this).data();
+			console.log(song[0].track.name);
+		    });
       });
 }
